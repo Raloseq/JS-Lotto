@@ -1,1 +1,2 @@
-/* No CSS *//*# sourceMappingURL=style.min.css.map */
+body{background-color:#2157bd}body div{float:left;width:30px;height:30px;margin:10px;color:white;text-align:center;line-height:30px}body .circle{border-radius:50%;background-color:white;color:black}body .lotek{display:-webkit-box;display:-ms-flexbox;display:flex}body button{display:block;margin:20px auto;padding:10px;background-color:transparent;color:white;border:none;border:1px solid white;border-radius:10px;cursor:pointer}body button:hover{background-color:#256bec}
+/*# sourceMappingURL=style.min.css.map */

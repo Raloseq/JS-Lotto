@@ -1,0 +1,39 @@
+body {
+    background-color: rgb(33, 87, 189);
+
+    div {
+        float: left;
+        width: 30px;
+        height: 30px;
+        margin: 10px;
+        color: white;
+        text-align: center;
+        line-height: 30px;
+    }
+
+    .circle {
+        border-radius: 50%;
+        background-color: white;
+        color: black;
+    }
+
+    .lotek {
+        display: flex;
+    }
+
+    button {
+        display: block;
+        margin: 20px auto;
+        padding: 10px;
+        background-color: transparent;
+        color: white;
+        border: none;
+        border: 1px solid white;
+        border-radius: 10px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgb(37, 107, 236);
+        }
+    }
+}
