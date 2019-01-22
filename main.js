@@ -9,7 +9,7 @@ for (let i = 1; i < 50; i++) {
 }
 let userNumbers = [];
 addNumbers.addEventListener('click', function () {
-    userNumbers.push(userNumbersValue.value);
+    userNumbers.push(parseInt(userNumbersValue.value));
 });
 removeNumbers.addEventListener('click', function () {
     clearNumbers = confirm("Czy na pewno chcesz wyczyścić swoje typy?");
@@ -30,7 +30,7 @@ randomNumberGenerator.addEventListener('click', function () {
     randomNumbers.forEach((element) => {
         if (userNumbers.indexOf(element) !== -1) {
             hits++;
-        }
+        };
     });
     console.log(hits);
 });
