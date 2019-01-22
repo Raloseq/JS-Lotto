@@ -26,11 +26,11 @@ randomNumberGenerator.addEventListener('click', function () {
         div.textContent = number;
         drawnNumbers.appendChild(div);
     };
+    let hits = 0;
+    randomNumbers.forEach((element) => {
+        if (userNumbers.indexOf(element) !== -1) {
+            hits++;
+        }
+    });
+    console.log(hits);
 });
-let hits = 0;
-randomNumbers.forEach((element) => {
-    if (userNumbers.indexOf(element) !== -1) {
-        hits++;
-    }
-});
-console.log(hits);
