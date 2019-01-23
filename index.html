@@ -10,10 +10,16 @@
 </head>
 
 <body>
-    Podaj liczby<input type="text" id="userNumbers">
+    Podaj liczby<input type="number" id="userNumbers">
     <input type="submit" value="OK" id="pushNumbers"><br>
-    Wyczysc swoje liczby<input type="submit" value="OK" id="removeNumbers">
+    Wyczysc swoje liczby<input type="submit" value="OK" id="removeNumbers"><br>
+    Twoje typy:
+    <div class="showUserNumbers"></div>
+    <input type="submit" value="Pokaż" id="showUserNumbersInDiv">
+    <input type="submit" value="Ukryj" id="hideUserNumbersInDiv"><br>
+    Ile trafiłeś?<div class="userHits"></div>
     <button>Wylosuj liczby</button>
+    <h1>Wylosowane Liczby</h1>
     <div class="lotek"></div>
     <script src="main.js"></script>
 </body>
