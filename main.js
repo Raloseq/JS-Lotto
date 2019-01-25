@@ -40,8 +40,11 @@ removeNumbers.addEventListener('click', function () {
 let randomNumbers = [];
 randomNumberGenerator.addEventListener('click', function () {
     for (let i = 0; i < 6; i++) {
-        let number = Math.round(Math.random() * (lottoNumbers.length - 1));
+        while (randomNumbers.indexOf(number) != -1) {
+            var number = Math.round(Math.random() * (lottoNumbers.length - 1));
+        }
         randomNumbers.push(number);
+        console.log(number);
         const div = document.createElement('div');
         div.textContent = number;
         drawnNumbers.appendChild(div);
