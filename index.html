@@ -10,17 +10,34 @@
 </head>
 
 <body>
-    Podaj liczby<input type="number" id="userNumbers">
-    <input type="submit" value="OK" id="pushNumbers"><br>
-    Wyczysc swoje liczby<input type="submit" value="OK" id="removeNumbers"><br>
-    Twoje typy:
-    <div class="showUserNumbers"></div>
-    <input type="submit" value="Pokaż" id="showUserNumbersInDiv">
-    <input type="submit" value="Ukryj" id="hideUserNumbersInDiv"><br>
-    Ile trafiłeś?<div class="userHits"></div>
-    <button>Wylosuj liczby</button>
-    <h1>Wylosowane Liczby</h1>
-    <div class="lotek"></div>
+    <div class="container">
+        <div class="first-column">
+            <div class="flex-item">
+                <h1>Podaj liczby</h1>
+                <input type="number" id="userNumbers">
+                <input type="submit" value="OK" id="pushNumbers">
+            </div>
+            <div class="flex-item">
+                <h1>Wyczysc swoje liczby</h1>
+                <input type="submit" value="OK" id="removeNumbers">
+            </div>
+            <div class="flex-item">
+                <h1>Twoje typy:</h1>
+                <div class="showUserNumbers"></div>
+                <input type="submit" value="Pokaż" id="showUserNumbersInDiv">
+                <input type="submit" value="Ukryj" id="hideUserNumbersInDiv">
+            </div>
+            <div class="flex-item">
+                <h1>Ile trafiłeś?</h1>
+                <div class="userHits"></div>
+            </div>
+        </div>
+        <div class="second-column">
+            <button>Wylosuj liczby</button>
+            <h1>Wylosowane Liczby</h1>
+            <div class="lotek"></div>
+        </div>
+    </div>
     <script src="main.js"></script>
 </body>
 
