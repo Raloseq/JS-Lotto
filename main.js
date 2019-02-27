@@ -8,10 +8,15 @@ const showUserNumbersInDiv = document.getElementById('showUserNumbersInDiv');
 const hideUserNumbersInDiv = document.getElementById('hideUserNumbersInDiv');
 const userHitsDiv = document.querySelector('.userHits');
 // PRZYPISANIE DO TABLICY 49 LICZN
-let lottoNumbers = [];
-for (let i = 1; i < 50; i++) {
-    lottoNumbers.push(i);
+
+function getLottoNumbers() {
+    let lottoNumbers = [];
+    for (let i = 1; i < 50; i++) {
+        lottoNumbers.push(i);
+    }
+    return lottoNumbers;
 }
+
 // PRZYPISANIE DO TABLICY USERA JEGO TYPOW
 let userNumbers = [];
 addNumbers.addEventListener('click', function () {
@@ -38,6 +43,7 @@ removeNumbers.addEventListener('click', function () {
 });
 // LOSOWANIE 6 RANDOMOWYCH LICZB Z TABLICY lottoNumbers
 let randomNumbers = [];
+const lottoNumbers = getLottoNumbers();
 randomNumberGenerator.addEventListener('click', function () {
     for (let i = 0; i < 6; i++) {
         while (randomNumbers.indexOf(number) != -1) {
