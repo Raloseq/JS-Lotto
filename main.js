@@ -7,16 +7,23 @@ const showUserNumbers = document.querySelector('.showUserNumbers');
 const showUserNumbersInDiv = document.getElementById('showUserNumbersInDiv');
 const hideUserNumbersInDiv = document.getElementById('hideUserNumbersInDiv');
 const userHitsDiv = document.querySelector('.userHits');
-// PRZYPISANIE DO TABLICY 49 LICZN
-let lottoNumbers = [];
-for (let i = 1; i < 50; i++) {
-    lottoNumbers.push(i);
+// PRZYPISANIE DO TABLICY 49 LICZB
+const getLottoNumbers = () => {
+    let lottoNumbers = [];
+    for (let i = 1; i < 50; i++) {
+        lottoNumbers.push(i);
+    }
+    return lottoNumbers;
 }
 // PRZYPISANIE DO TABLICY USERA JEGO TYPOW
-let userNumbers = [];
-addNumbers.addEventListener('click', function () {
-    userNumbers.push(parseInt(userNumbersValue.value));
-});
+const addUserNumbersToArray = () => {
+    let userNumbers = [];
+    addNumbers.addEventListener('click', function () {
+        userNumbers.push(parseInt(userNumbersValue.value));
+    });
+    return userNumbers;
+};
+const userNumbers = addUserNumbersToArray();
 // POKAZYWANIE TYPÓW USERA
 showUserNumbersInDiv.addEventListener('click', function () {
     if (userNumbers.length == 0) {
@@ -36,28 +43,37 @@ removeNumbers.addEventListener('click', function () {
         userNumbers = [];
     };
 });
-// LOSOWANIE 6 RANDOMOWYCH LICZB Z TABLICY lottoNumbers
-let randomNumbers = [];
-randomNumberGenerator.addEventListener('click', function () {
-    for (let i = 0; i < 6; i++) {
-        while (randomNumbers.indexOf(number) != -1) {
-            var number = Math.round(Math.random() * (lottoNumbers.length - 1));
-        }
-        randomNumbers.push(number);
-        const div = document.createElement('div');
-        div.textContent = number;
-        drawnNumbers.appendChild(div);
-    };
-    // ZLICZANIE PUNKTOW USERA
+// ZLICZANIE PUNKTOW USERA
+const userPoints = () => {
     let hits = 0;
     randomNumbers.forEach((element) => {
         if (userNumbers.indexOf(element) !== -1) {
             hits++;
         };
     });
+    return hits;
+}
+//SPRAWDZANIE CZY LICZBA SIĘ POTWARZA
+const recurrenceNumber = () => {
+    while (randomNumbers.indexOf(number) != -1) {
+        var number = Math.round(Math.random() * (lottoNumbers.length - 1));
+    }
+    return number;
+};
+// LOSOWANIE 6 RANDOMOWYCH LICZB Z TABLICY lottoNumbers
+let randomNumbers = [];
+const lottoNumbers = getLottoNumbers();
+randomNumberGenerator.addEventListener('click', function () {
+    for (let i = 0; i < 6; i++) {
+        const number = recurrenceNumber();
+        randomNumbers.push(number);
+        const div = document.createElement('div');
+        div.textContent = number;
+        drawnNumbers.appendChild(div);
+    };
     // POKAZYWANIE PUNKTOW USERA W DIVIE
+    const hits = userPoints();
     const addUserHitsToP = document.createElement('p');
     userHitsDiv.textContent = hits;
     userHitsDiv.appendChild(addUserHitsToP);
-
 });
