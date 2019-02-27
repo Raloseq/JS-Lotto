@@ -15,6 +15,7 @@ const getLottoNumbers = () => {
     }
     return lottoNumbers;
 }
+
 // PRZYPISANIE DO TABLICY USERA JEGO TYPOW
 const addUserNumbersToArray = () => {
     let userNumbers = [];
@@ -23,7 +24,7 @@ const addUserNumbersToArray = () => {
     });
     return userNumbers;
 };
-const userNumbers = addUserNumbersToArray();
+let userNumbers = addUserNumbersToArray();
 // POKAZYWANIE TYPÓW USERA
 showUserNumbersInDiv.addEventListener('click', function () {
     if (userNumbers.length == 0) {
