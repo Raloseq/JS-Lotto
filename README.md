@@ -1,2 +1,2 @@
 # JS-Lotto
-Download it and check what i create :)
+Simple lotto created with js
